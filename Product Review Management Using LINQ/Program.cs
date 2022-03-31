@@ -28,7 +28,7 @@ namespace Product_Review_Management_Using_LINQ
             new ProductReview() { ProductId = 14, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true }
             };
-            Console.WriteLine("Rows in the table = ");
+            Console.WriteLine("\nRows in the table = ");
             foreach (var list in productReviewList)
             {
                 Console.WriteLine("Product id = " + list.ProductId + "User id = " + list.UserId + "Rating is = " + list.Rating + " Review is = " + list.Review + " isLike = " + list.isLike);
@@ -40,6 +40,8 @@ namespace Product_Review_Management_Using_LINQ
             management.SelectedRecords(productReviewList);
             // UC4
             management.RetrieveCountOfRecords(productReviewList);
+            // UC5
+            management.RetrieveProductIdAndReview(productReviewList);
         }
     }
 }

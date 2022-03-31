@@ -39,11 +39,24 @@ namespace Product_Review_Management_Using_LINQ
         // UC4- Retrieves the count of record with  the help of group by id.
         public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
         {
+            //lambda syntax
             var recordedData = listProductReview.GroupBy(x => x.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() });
             Console.WriteLine("\nProduct id and count = ");
             foreach (var list in recordedData)
             {
-                Console.WriteLine(list.ProductId + " = " + list.Count);
+                Console.WriteLine(list.ProductId + "------" + list.Count);
+            }
+        }
+
+        // UC5- Retrieves the productId and review.
+        public void RetrieveProductIdAndReview(List<ProductReview> listProductReviews)
+        {
+            //lambda syntax
+            var recordData = listProductReviews.Select(x => new { ProductId = x.ProductId, Review = x.Review });
+            Console.WriteLine("\nProduct id and review = ");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductId + "------" + list.Review);
             }
         }
     }
