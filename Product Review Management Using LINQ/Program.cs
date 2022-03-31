@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Product_Review_Management_Using_LINQ
 {
@@ -26,7 +27,16 @@ namespace Product_Review_Management_Using_LINQ
             new ProductReview() { ProductId = 12, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 13, UserId = 1, Rating = 5, Review = "Bad", isLike=true },
             new ProductReview() { ProductId = 14, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true }
+            new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 17, UserId = 17, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 18, UserId = 18, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 19, UserId = 19, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 20, UserId = 20, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 21, UserId = 21, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 22, UserId = 22, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 23, UserId = 23, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 24, UserId = 24, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 25, UserId = 25, Rating = 5, Review = "Good", isLike=true }
             };
             Console.WriteLine("\nRows in the table = ");
             foreach (var list in productReviewList)
@@ -44,8 +54,12 @@ namespace Product_Review_Management_Using_LINQ
             management.RetrieveProductIdAndReview(productReviewList);
             // UC6
             management.SkipTopFiveRecords(productReviewList);
-            // UC7
-            management.RetrieveProductIdAndReview(productReviewList);
+            // UC8
+            DataTable dataTable = management.CreateTable(productReviewList);
+            foreach (var list in productReviewList)
+            {
+                dataTable.Rows.Add(list.ProductId, list.UserId, list.Rating, list.Review, list.isLike);
+            }
         }
     }
 }
