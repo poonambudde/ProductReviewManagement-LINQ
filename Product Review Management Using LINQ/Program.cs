@@ -60,6 +60,8 @@ namespace Product_Review_Management_Using_LINQ
             {
                 dataTable.Rows.Add(list.ProductId, list.UserId, list.Rating, list.Review, list.isLike);
             }
+            // UC9
+            management.RetrieveRecordsWithIsLikeValueTrue(dataTable);
         }
     }
 }
