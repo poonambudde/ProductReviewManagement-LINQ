@@ -8,7 +8,7 @@ namespace Product_Review_Management_Using_LINQ
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Product Review Management Problems Using LINQ");
-
+            // UC1
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
             new ProductReview() { ProductId = 1, UserId = 1, Rating = 5.5, Review = "Good", isLike=true},
@@ -34,8 +34,12 @@ namespace Product_Review_Management_Using_LINQ
                 Console.WriteLine("Product id = " + list.ProductId + "User id = " + list.UserId + "Rating is = " + list.Rating + " Review is = " + list.Review + " isLike = " + list.isLike);
             }
             Management management = new Management();
+            // UC2
             management.TopRecords(productReviewList);
+            // UC3
             management.SelectedRecords(productReviewList);
+            // UC4
+            management.RetrieveCountOfRecords(productReviewList);
         }
     }
 }
