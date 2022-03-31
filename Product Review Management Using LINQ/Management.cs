@@ -82,5 +82,20 @@ namespace Product_Review_Management_Using_LINQ
             dataTable.Columns.Add("isLike");
             return dataTable;
         }
+
+        // UC9- Retrieve Records with is value true.
+        public void RetrieveRecordsWithIsLikeValueTrue(DataTable table)
+        {
+            var recordData = from productReview in table.AsEnumerable()
+                             where (productReview.Field<string>("isLike") == true.ToString())
+                             select productReview;
+            //lambda syntax
+            var recordedData = table.AsEnumerable().Where(x => x.Field<string>("isLike") == true.ToString());
+            Console.WriteLine("\nRecords with isLike value is true = ");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductId:-" + list.Field<string>("ProductId") + " UserId:-" + list.Field<string>("UserId") + " Ratings:-" + list.Field<string>("Rating") + " Review:-" + list.Field<string>("Review") + " IsLike:-" + list.Field<string>("isLike"));
+            }
+        }
     }
 }
