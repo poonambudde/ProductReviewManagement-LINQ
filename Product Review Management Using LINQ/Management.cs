@@ -48,7 +48,7 @@ namespace Product_Review_Management_Using_LINQ
             }
         }
 
-        // UC5- Retrieves the productId and review.
+        // UC5- Retrieve Only the productId and review.
         public void RetrieveProductIdAndReview(List<ProductReview> listProductReview)
         {
             //lambda syntax
@@ -71,5 +71,7 @@ namespace Product_Review_Management_Using_LINQ
                 Console.WriteLine("ProductId:-" + list.ProductId + " UserId:-" + list.UserId + " Ratings:-" + list.Rating + " Review:-" + list.Review + " IsLike:-" + list.isLike);
             }
         }
+
+        // UC7- Retrieve Only the productId and review.
     }
 }
