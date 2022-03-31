@@ -35,6 +35,7 @@ namespace Product_Review_Management_Using_LINQ
             }
             Management management = new Management();
             management.TopRecords(productReviewList);
+            management.SelectedRecords(productReviewList);
         }
     }
 }
